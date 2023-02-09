@@ -73,6 +73,7 @@ import mekanism.common.transmitters.grid.GasNetwork.GasTransferEvent;
 import mekanism.common.util.MekanismUtils;
 import mekanism.common.util.StackUtils;
 import mekanism.common.voice.VoiceServerManager;
+
 import mekanism.common.world.GenHandler;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EnumCreatureType;
@@ -156,6 +157,7 @@ public class Mekanism {
      * Mekanism configuration instances
      */
     public static Configuration configuration;
+    public static Configuration configurationv10;
     public static Configuration configurationgenerators;
     public static Configuration configurationtools;
     /**
@@ -505,7 +507,9 @@ public class Mekanism {
             //Metallurgic Infuser Recipes
             RecipeHandler.addMetallurgicInfuserRecipe(carbon, 10, new ItemStack(Items.IRON_INGOT), new ItemStack(MekanismItems.EnrichedIron));
             RecipeHandler.addMetallurgicInfuserRecipe(carbon, 10, new ItemStack(MekanismItems.EnrichedIron), new ItemStack(MekanismItems.OtherDust, 1, 1));
-            RecipeHandler.addMetallurgicInfuserRecipe(redstone, 10, new ItemStack(Items.IRON_INGOT), new ItemStack(MekanismItems.EnrichedAlloy));
+            for (ItemStack steel : OreDictionary.getOres("ingotSteel", false)) {
+                RecipeHandler.addMetallurgicInfuserRecipe(redstone, 10, StackUtils.size(steel, 1), new ItemStack(MekanismItems.EnrichedAlloy));
+            }
             RecipeHandler.addMetallurgicInfuserRecipe(fungi, 10, new ItemStack(Blocks.DIRT), new ItemStack(Blocks.MYCELIUM));
             RecipeHandler.addMetallurgicInfuserRecipe(bio, 10, new ItemStack(Blocks.COBBLESTONE), new ItemStack(Blocks.MOSSY_COBBLESTONE));
             RecipeHandler.addMetallurgicInfuserRecipe(bio, 10, new ItemStack(Blocks.STONEBRICK, 1, 0), new ItemStack(Blocks.STONEBRICK, 1, 1));
@@ -913,6 +917,7 @@ public class Mekanism {
 
         //Set the mod's configuration
         configuration = new Configuration(new File("config/mekanism/Mekanism.cfg"));
+        configurationv10 = new Configuration(new File("config/mekanism/MekanismV10.cfg"));
         configurationgenerators = new Configuration(new File("config/mekanism/MekanismGenerators.cfg"));
         configurationtools = new Configuration(new File("config/mekanism/MekanismTools.cfg"));
 

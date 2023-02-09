@@ -42,8 +42,8 @@ public class GuiGeneratorsConfig extends GuiConfig {
 
         @Override
         protected GuiScreen buildChildScreen() {
-            return new GuiConfig(owningScreen, new ConfigElement(Mekanism.configuration.getCategory(Configuration.CATEGORY_GENERAL)).getChildElements(), owningScreen.modID,
-                  Configuration.CATEGORY_GENERAL, false, false, GuiConfig.getAbridgedConfigPath(Mekanism.configuration.toString()));
+            return new GuiConfig(owningScreen, new ConfigElement(Mekanism.configurationgenerators.getCategory(Configuration.CATEGORY_GENERAL)).getChildElements(), owningScreen.modID,
+                  Configuration.CATEGORY_GENERAL, false, false, GuiConfig.getAbridgedConfigPath(Mekanism.configurationgenerators.toString()));
         }
     }
 
