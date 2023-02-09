@@ -73,7 +73,6 @@ import mekanism.common.transmitters.grid.GasNetwork.GasTransferEvent;
 import mekanism.common.util.MekanismUtils;
 import mekanism.common.util.StackUtils;
 import mekanism.common.voice.VoiceServerManager;
-
 import mekanism.common.world.GenHandler;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EnumCreatureType;
