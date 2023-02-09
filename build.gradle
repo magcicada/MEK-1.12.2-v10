@@ -102,6 +102,8 @@ group = "mekanism"
 version = "${minecraft_version}-${mod_version}." + (System.env.BUILD_NUMBER ?: "${homebaked}")
 archivesBaseName = "MekanismAll"
 sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
+libsDirName = "../output"
+distsDirName = "../output"
 
 def explodedVersion = mod_version.split("\\.")
 

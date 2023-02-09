@@ -46,8 +46,7 @@ import org.jetbrains.annotations.Contract;
 public class TileEntityMetallurgicInfuser extends TileEntityOperationalMachine implements IComputerIntegration, ISideConfiguration, IConfigCardAccess, ITierUpgradeable,
       ISustainedData {
 
-    private static final String[] methods = new String[]{"getEnergy", "getProgress", "facing", "canOperate", "getMaxEnergy", "getEnergyNeeded", "getInfuse",
-                                                         "getInfuseNeeded"};
+    private static final String[] methods = new String[]{"getEnergy", "getProgress", "facing", "canOperate", "getMaxEnergy", "getEnergyNeeded", "getInfuse", "getInfuseNeeded"};
     /**
      * The maxiumum amount of infuse this machine can store.
      */
@@ -67,8 +66,8 @@ public class TileEntityMetallurgicInfuser extends TileEntityOperationalMachine i
         configComponent.addOutput(TransmissionType.ITEM, new SideData("Input", EnumColor.RED, new int[]{2}));
         configComponent.addOutput(TransmissionType.ITEM, new SideData("Output", EnumColor.INDIGO, new int[]{3}));
         configComponent.addOutput(TransmissionType.ITEM, new SideData("Energy", EnumColor.BRIGHT_GREEN, new int[]{4}));
-        configComponent.addOutput(TransmissionType.ITEM, new SideData("Infuse", EnumColor.YELLOW, new int[]{1}));
-        configComponent.addOutput(TransmissionType.ITEM, new SideData("Input_Extra", EnumColor.ORANGE, new int[]{1,2}));
+        configComponent.addOutput(TransmissionType.ITEM, new SideData("Infuse", EnumColor.ORANGE, new int[]{1}));
+        configComponent.addOutput(TransmissionType.ITEM, new SideData("Input_Extra", EnumColor.PURPLE, new int[]{1,2}));
         configComponent.setConfig(TransmissionType.ITEM, new byte[]{4, 0, 0, 3, 1, 2});
 
         inventory = NonNullList.withSize(5, ItemStack.EMPTY);

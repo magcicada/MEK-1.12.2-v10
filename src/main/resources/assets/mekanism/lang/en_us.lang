@@ -177,7 +177,7 @@ tile.MachineBlock3.SuperchargedCoil.name=Supercharged Coil(WIP)
 tile.MachineBlock3.AmbientAccumulator.name=Ambient gas collectors
 tile.MachineBlock3.IsotopicCentrifuge.name=Isotopic Centrifuge
 tile.MachineBlock3.OrganicFarm.name=Organic Farm
-tile.MachineBlock3.antiprotonicnucleosynthesizer.name=Antiprotonic Nucleosynthesizer£¨WIP£©
+tile.MachineBlock3.antiprotonicnucleosynthesizer.name=Antiprotonic Nucleosynthesizer(WIP)
 tile.MachineBlock3.Factory.name=Factory
 
 tile.MachineBlock4.Stamping.name=CNC punching machine
@@ -477,6 +477,7 @@ entity.BabySkeleton.name=Baby Skeleton
 
 # Config Gui
 mekanism.configgui.ctgy.general=General Settings
+mekanism.configgui.ctgy.mekv10=MEK:V10 Settings
 mekanism.configgui.ctgy.machines=Machine Settings
 mekanism.configgui.ctgy.tier=Tier Settings
 mekanism.configgui.ctgy.usage=Usage Settings
@@ -980,7 +981,7 @@ tooltip.AmbientAccumulator=One that can collect the gases contained in the curre
 tooltip.MekTool1=A very powerful excavating machine
 tooltip.MekTool2=When flushed above 25%, the damage is super doubled
 tooltip.MekTool3=When it is more than 90%, it may have a flash sale effect?
-tooltip.MekTool4=¡ì4???Dangerous tools, warning!???
+tooltip.MekTool4=âœªâ˜£â˜¢Dangerous tools, warning!âœªâ˜£â˜¢
 
 tooltip.HeatGenerator=A generator that uses the heat of lava or other burnable resources to produce energy.
 tooltip.SolarGenerator=A generator that uses the power of the sun to produce energy.

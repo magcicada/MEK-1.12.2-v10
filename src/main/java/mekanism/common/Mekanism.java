@@ -71,7 +71,9 @@ import mekanism.common.transmitters.grid.EnergyNetwork.EnergyTransferEvent;
 import mekanism.common.transmitters.grid.FluidNetwork.FluidTransferEvent;
 import mekanism.common.transmitters.grid.GasNetwork.GasTransferEvent;
 import mekanism.common.util.MekanismUtils;
+import mekanism.common.util.StackUtils;
 import mekanism.common.voice.VoiceServerManager;
+
 import mekanism.common.world.GenHandler;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EnumCreatureType;
@@ -155,6 +157,7 @@ public class Mekanism {
      * Mekanism configuration instances
      */
     public static Configuration configuration;
+    public static Configuration configurationv10;
     public static Configuration configurationgenerators;
     public static Configuration configurationtools;
     /**
@@ -438,14 +441,14 @@ public class Mekanism {
         }
 
         if (MekanismConfig.current().general.machinesManager.isEnabled(MachineType.ORGANIC_FARM)) {
-            // 木头
+            //Farm log
             RecipeHandler.addOrganicFarmRecipe(new ItemStack(Blocks.SAPLING, 1, 0), MekanismFluids.NutrientSolution, new ItemStack(Blocks.LOG, 6, 0), new ItemStack(Blocks.SAPLING, 1, 0), MekanismConfig.current().general.log.val());
             RecipeHandler.addOrganicFarmRecipe(new ItemStack(Blocks.SAPLING, 1, 1), MekanismFluids.NutrientSolution, new ItemStack(Blocks.LOG, 6, 1), new ItemStack(Blocks.SAPLING, 1, 1), MekanismConfig.current().general.log.val());
             RecipeHandler.addOrganicFarmRecipe(new ItemStack(Blocks.SAPLING, 1, 2), MekanismFluids.NutrientSolution, new ItemStack(Blocks.LOG, 6, 2), new ItemStack(Blocks.SAPLING, 1, 2), MekanismConfig.current().general.log.val());
             RecipeHandler.addOrganicFarmRecipe(new ItemStack(Blocks.SAPLING, 1, 3), MekanismFluids.NutrientSolution, new ItemStack(Blocks.LOG, 6, 3), new ItemStack(Blocks.SAPLING, 1, 3), MekanismConfig.current().general.log.val());
             RecipeHandler.addOrganicFarmRecipe(new ItemStack(Blocks.SAPLING, 1, 4), MekanismFluids.NutrientSolution, new ItemStack(Blocks.LOG2, 6, 0), new ItemStack(Blocks.SAPLING, 1, 4), MekanismConfig.current().general.log.val());
             RecipeHandler.addOrganicFarmRecipe(new ItemStack(Blocks.SAPLING, 1, 5), MekanismFluids.NutrientSolution, new ItemStack(Blocks.LOG2, 6, 1), new ItemStack(Blocks.SAPLING, 1, 5), MekanismConfig.current().general.log.val());
-            // 农作物
+            // Farm seed
             RecipeHandler.addOrganicFarmRecipe(new ItemStack(Items.NETHER_WART, 1), MekanismFluids.NutrientSolution, new ItemStack(Items.NETHER_WART, 3));
             RecipeHandler.addOrganicFarmRecipe(new ItemStack(Items.REEDS, 1), MekanismFluids.NutrientSolution, new ItemStack(Items.REEDS, 3));
             RecipeHandler.addOrganicFarmRecipe(new ItemStack(Items.CARROT, 1), MekanismFluids.NutrientSolution, new ItemStack(Items.CARROT, 3));
@@ -504,7 +507,9 @@ public class Mekanism {
             //Metallurgic Infuser Recipes
             RecipeHandler.addMetallurgicInfuserRecipe(carbon, 10, new ItemStack(Items.IRON_INGOT), new ItemStack(MekanismItems.EnrichedIron));
             RecipeHandler.addMetallurgicInfuserRecipe(carbon, 10, new ItemStack(MekanismItems.EnrichedIron), new ItemStack(MekanismItems.OtherDust, 1, 1));
-            RecipeHandler.addMetallurgicInfuserRecipe(redstone, 10, new ItemStack(Items.IRON_INGOT), new ItemStack(MekanismItems.EnrichedAlloy));
+            for (ItemStack steel : OreDictionary.getOres("ingotSteel", false)) {
+                RecipeHandler.addMetallurgicInfuserRecipe(redstone, 10, StackUtils.size(steel, 1), new ItemStack(MekanismItems.EnrichedAlloy));
+            }
             RecipeHandler.addMetallurgicInfuserRecipe(fungi, 10, new ItemStack(Blocks.DIRT), new ItemStack(Blocks.MYCELIUM));
             RecipeHandler.addMetallurgicInfuserRecipe(bio, 10, new ItemStack(Blocks.COBBLESTONE), new ItemStack(Blocks.MOSSY_COBBLESTONE));
             RecipeHandler.addMetallurgicInfuserRecipe(bio, 10, new ItemStack(Blocks.STONEBRICK, 1, 0), new ItemStack(Blocks.STONEBRICK, 1, 1));
@@ -912,6 +917,7 @@ public class Mekanism {
 
         //Set the mod's configuration
         configuration = new Configuration(new File("config/mekanism/Mekanism.cfg"));
+        configurationv10 = new Configuration(new File("config/mekanism/MekanismV10.cfg"));
         configurationgenerators = new Configuration(new File("config/mekanism/MekanismGenerators.cfg"));
         configurationtools = new Configuration(new File("config/mekanism/MekanismTools.cfg"));
 
