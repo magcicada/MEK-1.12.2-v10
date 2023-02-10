@@ -72,7 +72,7 @@ public class TileEntityPRC extends TileEntityBasicMachine<PressurizedInput, Pres
         configComponent.setCanEject(TransmissionType.FLUID, false);
 
         configComponent.addOutput(TransmissionType.GAS, new SideData("None", EnumColor.GREY, InventoryUtils.EMPTY));
-        configComponent.addOutput(TransmissionType.GAS, new SideData("Gas", EnumColor.YELLOW, new int[]{1}));
+        configComponent.addOutput(TransmissionType.GAS, new SideData("Gas", EnumColor.ORANGE, new int[]{1}));
         configComponent.addOutput(TransmissionType.GAS, new SideData("Output", EnumColor.INDIGO, new int[]{2}));
         configComponent.setConfig(TransmissionType.GAS, new byte[]{0, 0, 0, 0, 1, 2});
 
