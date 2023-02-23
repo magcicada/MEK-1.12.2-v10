@@ -96,12 +96,20 @@ repositories {
         name 'CB Maven'
         url "http://chickenbones.net/maven/"
     }
+    maven {
+        url = "https://cursemaven.com/"
+    }
+    maven {
+        url = "https://modmaven.dev/"
+    }
 }
 
 group = "mekanism"
 version = "${minecraft_version}-${mod_version}." + (System.env.BUILD_NUMBER ?: "${homebaked}")
 archivesBaseName = "MekanismAll"
 sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
+libsDirName = "../output"
+distsDirName = "../output"
 
 def explodedVersion = mod_version.split("\\.")
 
@@ -125,7 +133,9 @@ dependencies {
     compileOnly "mezz.jei:jei_${minecraft_version}:${jei_version}:api"
     runtime "mezz.jei:jei_${minecraft_version}:${jei_version}"
     compileOnly "net.darkhax.tesla:Tesla-${minecraft_version}:${tesla_version}"
-    compileOnly "inventory-tweaks:InventoryTweaks:${invtweak_version}:api"
+    compileOnly "curse.maven:inventory-tweaks-223094:2923461"    // API
+    compileOnly "curse.maven:inventory-tweaks-223094:2923462"    // deobf
+    compileOnly "curse.maven:inventory-tweaks-223094:2923460"    // mod
     compileOnly "li.cil.oc:OpenComputers:MC${minecraft_version}-${opencomputers_version}:api"
     // Not updated yet
     compileOnly "mcp.mobius.waila:Hwyla:${hwyla_version}:api"

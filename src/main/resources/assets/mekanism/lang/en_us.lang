@@ -185,7 +185,7 @@ tile.MachineBlock3.SuperchargedCoil.name=Supercharged Coil(WIP)
 tile.MachineBlock3.AmbientAccumulator.name=Ambient gas collectors
 tile.MachineBlock3.IsotopicCentrifuge.name=Isotopic Centrifuge
 tile.MachineBlock3.OrganicFarm.name=Organic Farm
-tile.MachineBlock3.antiprotonicnucleosynthesizer.name=Antiprotonic Nucleosynthesizer（WIP）
+tile.MachineBlock3.antiprotonicnucleosynthesizer.name=Antiprotonic Nucleosynthesizer(WIP)
 tile.MachineBlock3.Factory.name=Factory
 
 tile.MachineBlock4.Stamping.name=CNC punching machine
@@ -485,6 +485,7 @@ entity.BabySkeleton.name=Baby Skeleton
 
 # Config Gui
 mekanism.configgui.ctgy.general=General Settings
+mekanism.configgui.ctgy.mekv10=MEK:V10 Settings
 mekanism.configgui.ctgy.machines=Machine Settings
 mekanism.configgui.ctgy.tier=Tier Settings
 mekanism.configgui.ctgy.usage=Usage Settings

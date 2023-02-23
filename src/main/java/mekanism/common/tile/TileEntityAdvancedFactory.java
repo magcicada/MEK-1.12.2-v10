@@ -21,8 +21,8 @@ public class TileEntityAdvancedFactory extends TileEntityFactory {
         configComponent.addOutput(TransmissionType.ITEM, new SideData("Input", EnumColor.RED, new int[]{5, 6, 7, 8, 9}));
         configComponent.addOutput(TransmissionType.ITEM, new SideData("Output", EnumColor.INDIGO, new int[]{10, 11, 12, 13, 14}));
         configComponent.addOutput(TransmissionType.ITEM, new SideData("Energy", EnumColor.BRIGHT_GREEN, new int[]{1}));
-        configComponent.addOutput(TransmissionType.ITEM, new SideData("Extra", EnumColor.YELLOW, new int[]{4}));
-        configComponent.addOutput(TransmissionType.ITEM, new SideData("Input_Extra", EnumColor.ORANGE, new int[]{4,5,6,7,8,9}));
+        configComponent.addOutput(TransmissionType.ITEM, new SideData("Extra", EnumColor.ORANGE, new int[]{4}));
+        configComponent.addOutput(TransmissionType.ITEM, new SideData("Input_Extra", EnumColor.PURPLE, new int[]{4,5,6,7,8,9}));
 
         configComponent.setConfig(TransmissionType.ITEM, new byte[]{4, 0, 0, 3, 1, 2});
 
